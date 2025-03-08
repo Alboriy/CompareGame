@@ -1,3 +1,4 @@
+
 let score = 0;
 let currentIndex = 0;
 let correctAnswers = 0;
@@ -8,12 +9,19 @@ const images = [
     { src: "pictures/ai3.webp", isAI: true },
     { src: "pictures/ai4.webp", isAI: true },
     { src: "pictures/ai5.webp", isAI: true },
+    { src: "pictures/ai6.jpg", isAI: true },
+    { src: "pictures/ai7.jpg", isAI: true },
+    { src: "pictures/ai8.jpg", isAI: true },
     { src: "pictures/real1.webp", isAI: false },
     { src: "pictures/real2.webp", isAI: false },
     { src: "pictures/real3.webp", isAI: false },
     { src: "pictures/real4.webp", isAI: false },
     { src: "pictures/real5.webp", isAI: false },
-    { src: "pictures/real6.webp", isAI: false }
+    { src: "pictures/real6.webp", isAI: false },
+    { src: "pictures/real7.jpg", isAI: false },
+    { src: "pictures/real8.jpg", isAI: false },
+    { src: "pictures/real9.jpg", isAI: false },
+    { src: "pictures/real10.jpg", isAI: false }
 ];
 
 function shuffle(array) {
