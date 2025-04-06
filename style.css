@@ -35,16 +35,15 @@ h1 {
 .img-thumbnail {
     border: none;
     border-radius: 15px;
-    width: 100%;
+    width: 100%; /* адаптивная ширина */
     max-width: 350px;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 350px; /* фиксированная высота */
+    object-fit: cover; /* не деформировать изображение */
+    transition: box-shadow 0.3s ease;
     margin-bottom: 1rem;
 }
 
 .img-thumbnail:hover {
-    transform: scale(1.02);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 

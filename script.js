@@ -1,4 +1,3 @@
-
 let score = 0;
 let currentIndex = 0;
 let correctAnswers = 0;
@@ -36,10 +35,18 @@ function loadImage() {
         endGame();
         return;
     }
+
     const imageObj = images[currentIndex];
     const imgElement = document.getElementById("image");
     imgElement.src = imageObj.src;
     imgElement.dataset.isAI = imageObj.isAI;
+
+    // Обновление текста прогресса
+    document.getElementById("progress-text").textContent = `Bild ${currentIndex + 1} von ${images.length}`;
+
+    // Обновление прогресс-бара
+    const progressBar = document.getElementById("progress-bar");
+    progressBar.style.width = ((currentIndex + 1) / images.length) * 100 + "%";
 }
 
 function makeChoice(choice) {
@@ -76,19 +83,26 @@ function restartGame() {
     currentIndex = 0;
     correctAnswers = 0;
     shuffle(images);
+
+    // Обновляем контент с прогресс-баром при рестарте
     document.getElementById("game-container").innerHTML = `
         <h1 class="mb-4 text-primary">Erkenne die KI oder das Original</h1>
         <p class="text-muted">Ist dieses Foto echt oder von einer KI generiert?</p>
-        <div class="d-flex justify-content-center">
-            <img id="image" src="" class="img-thumbnail">
+        <img id="image" src="" class="img-thumbnail">
+        <div class="my-3">
+            <p id="progress-text" class="mb-1 text-secondary">Bild 1 von 18</p>
+            <div class="progress" style="height: 10px;">
+                <div id="progress-bar" class="progress-bar bg-info" role="progressbar" style="width: 0%;"></div>
+            </div>
         </div>
-        <div class="mt-4 d-flex justify-content-center gap-4">
+        <div class="mt-4 d-flex flex-column flex-md-row justify-content-center gap-3">
             <button class="btn btn-primary" onclick="makeChoice(false)">Echt</button>
             <button class="btn btn-primary" onclick="makeChoice(true)">Generiert</button>
         </div>
-        <p id="result" class="mt-3 fw-bold"></p>
+        <p id="result" class="mt-4 fw-bold"></p>
         <p class="fs-4">Punkte: <span id="score" class="fw-bold text-success">0</span></p>
     `;
+
     loadImage();
 }
 
