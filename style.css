@@ -2,6 +2,7 @@ body {
     background-color: #e3f2fd;
     font-family: 'Arial', sans-serif;
 }
+
 .game-container {
     max-width: 600px;
     margin: auto;
@@ -10,6 +11,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 .img-thumbnail {
     border: 5px solid #007bff;
     border-radius: 10px;
@@ -18,24 +20,35 @@ body {
     height: 350px;
     object-fit: cover;
 }
+
 .img-thumbnail:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-.btn-primary, .btn-success {
+
+.btn-primary,
+.btn-success {
     width: 160px;
     font-size: 1.2rem;
     padding: 10px;
     border-radius: 8px;
 }
-.btn-primary:hover, .btn-success:hover {
+
+.btn-primary:hover,
+.btn-success:hover {
     transform: scale(1.05);
 }
+
 h1 {
     font-weight: bold;
 }
+
 #result {
     font-size: 1.5rem;
+    min-height: 2.5rem; /* предотвращает "прыжок" при появлении текста */
+    transition: opacity 0.3s ease;
+    opacity: 1;
 }
+
 img {
     display: block;
     margin: auto;
