@@ -72,7 +72,7 @@ function endGame() {
     document.getElementById("game-container").innerHTML = `
         <h1 class="text-primary">Spiel beendet!</h1>
         <p class="fs-4">Dein Ergebnis: <span class="fw-bold text-success">${score}</span> Punkte</p>
-        <p class="fs-4">Genauigkeit: <span class="fw-bold text-info">${accuracy}%</span></p>
+        <p class="fs-4">Genauigkeit: <span class="fw-bold text-primary">${accuracy}%</span></p>
         <button class="btn btn-success" id="restart-btn">Nochmal spielen</button>
     `;
     document.getElementById("restart-btn").addEventListener("click", restartGame);
@@ -110,4 +110,3 @@ document.addEventListener("DOMContentLoaded", () => {
     shuffle(images);
     loadImage();
 });
-//SAVE
